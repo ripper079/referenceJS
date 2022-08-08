@@ -120,17 +120,17 @@ document.querySelector('#manipulate-paragraph').textContent = "Haha, you are sec
 
 //Three Ways of creating functions
 
-//1. Defining function [Traditional way]
+//1. Defining function [Traditional way] - SquareItUp hold a function value
 const SquareItUp = function(x){
     return x*x;
 }
 
-//2. Declaration notation
+//2. Declaration notation - DoubleItUp tobe a function
 function DoubleItUp(x){
     return 2 * x;
 }
 
-//3. Arrow function
+//3. Arrow function - less verbose function value
 const TenTimesBigger = (x) => {
     return 10 * x;
 }
