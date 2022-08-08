@@ -135,4 +135,8 @@ const TenTimesBigger = (x) => {
     return 10 * x;
 }
 
-
+ //Arrays and properties
+  let colors = new Array('Red', 'Yellow', 'Orange');
+  console.log(colors.length);
+  // [Or]
+  console.log(colors["length"]);
