@@ -117,3 +117,22 @@ console.log(document.querySelector('#main-paragraph').textContent);
 console.log(document.querySelector('#main-paragraph').innerHTML);
 //Set the content in the DOM
 document.querySelector('#manipulate-paragraph').textContent = "Haha, you are secondary paragraph";
+
+//Three Ways of creating functions
+
+//1. Defining function [Traditional way]
+const SquareItUp = function(x){
+    return x*x;
+}
+
+//2. Declaration notation
+function DoubleItUp(x){
+    return 2 * x;
+}
+
+//3. Arrow function
+const TenTimesBigger = (x) => {
+    return 10 * x;
+}
+
+
