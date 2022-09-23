@@ -70,15 +70,6 @@ myCollectionCars.forEach(oneCar => {
 //    console.log("A " + oneCar._brand + " " + oneCar._model + " " + " year model: " + oneCar._year)
 });
 
-// ----------------------------------------------------------------------------
-//Call a function
-let money = DoubleItUp(100);
-//console.log("From 100 to:" + money);
-
-// Declara a function
-function DoubleItUp(numberToDouble){
-    return 2*numberToDouble;
-}
 
 // if/else statements
 let funEmoji = false;
@@ -151,14 +142,14 @@ const fileredItemAlt = products.filter(anItem => {
 
 //Takes on array and convert it into a new array
 const extractName = products.map(anItem => anItem.name);
-extractName.forEach( (e) => console.log(e) );
+//extractName.forEach( (e) => console.log(e) );
 //Useful when copy an array
 const copyAllproducts = products.map((e) => e);
 //copyAllproducts.forEach(e => console.log(e));
 const extractNameAndPrice = products.map( (anItem) => {
     return { name: anItem.name, price: anItem.price};
 });
-console.log(extractNameAndPrice);
+//console.log(extractNameAndPrice);
 
 //Return ONE item
 const firstGreenItem = products.find( e => e.color === "Green");
@@ -196,7 +187,54 @@ const totalPriceRedProducts = products.reduce((currentTotal, anItem) => {
 //const splicedProducts = products.splice(2,4);
 //products.splice(2, 3);
 //console.log(products);
-document.querySelector('#manipulate-paragraph').textContent = "Haha, you are secondary paragraph";
+
+products.in
+
+// ----------------------------------------------------------------------------
+
+//Properties to an object
+const aPerson = {
+    firstName: "Daniel",
+    lastName: "Oikarainen",
+    age: 22
+};
+
+aPerson.firstName = "Marko";
+aPerson.lastName = "Kiwi";
+aPerson.age = 44;
+
+ //console.log("Person name=" + aPerson.firstName + " Lastname= " + aPerson.lastName + " Age= " + aPerson.age);
+
+
+//New/add a property
+aPerson.salary = 5000000;
+//Now Remove it
+delete aPerson.salary;
+//Lets continue removing...
+delete aPerson.firstName;
+delete aPerson.lastName;
+delete aPerson.age;
+
+// aPerson = {
+//     firstName: "Js dont allow this - lol - lets crash the app"
+// };
+
+
+
+
+// ----------------------------------------------------------------------------
+//JSON
+const jsonPerson = {
+    "Full Name": "John Doe",
+    "Age" : 66,
+    "favorite color" : "yellow"
+}
+
+//console.log("JSon data:  Full Name=" + jsonPerson["Full Name"] + " Age=" + jsonPerson["Age"] + " Fav color=" + jsonPerson["favorite color"]);
+//Or
+// console.log("Person name=" + aPerson["firstName"] + " Lastname= " + aPerson["lastName"] + " Age= " + aPerson["age"]);
+
+// ----------------------------------------------------------------------------
 
 //Three Ways of creating functions
 
@@ -214,9 +252,108 @@ function DoubleItUp(x){
 const TenTimesBigger = (x) => {
     return 10 * x;
 }
+// ----------------------------------------------------------------------------
+// Functional programming - Done with higher-order functions in JS
 
- //Arrays and properties
-  let colors = new Array('Red', 'Yellow', 'Orange');
-  console.log(colors.length);
-  // [Or]
-  console.log(colors["length"]);
+//Higher-order functions
+//1. May accept functions as parameters
+//2. Will return a function
+const areaCircle = function (radius){
+    return Math.PI * radius * radius;
+};
+
+const cicumferenceCircle = function (radius){
+    return 2 * radius * radius;
+};
+
+const diameterCircle = function (radius){
+    return 2 * radius;
+};
+
+//Logic MUST a function parameter
+const calculate = function (radius, logic){
+    const calculateOutput = logic(radius);
+    return calculateOutput;
+}
+//console.log(calculate(5, areaCircle));
+
+
+// ----------------------------------------------------------------------------
+
+//Pure functions 
+//1. Given the same input will always return the same output (deterministic)
+//2. Have no side effects (Only access the data that is passed to it)
+
+//Satifies both criteria
+function pureFuncAdding(numb1, numb2){
+    total = numb1 + numb2;
+    return total;
+}
+
+function inpureFunc(){
+    //0 to 99
+    return Math.random() * 100;
+}
+
+
+
+// ----------------------------------------------------------------------------
+//Array/Object destructuring
+//Source https://www.youtube.com/watch?v=NIq3qLaHCIs
+const alphabet = ['A', 'B', 'C', 'D', 'E','F'];
+const numbers = ['1', '2', '3', '4', '5', '6'];
+
+
+//const firstElement = alphabet[0];
+//const secondElement = alphabet[1];
+const [firstElement, secondElement] = alphabet;
+//use , skip an elements
+const [,,thirdElement, fourthElement] = alphabet;
+/// ... is the spread operator means get the rest
+//Skip the first 2 elements and gets the rest of it
+const [,, ...restOfArray] = alphabet;
+
+//Combine arrays
+const newArrayAlpNumb = [...alphabet, ...numbers];
+
+const personOne = {
+    personName: "Bill",
+    personAge: 56,
+    adress: {
+        city: "Borås",
+        state: "Sweden"
+    }
+};
+
+const personTwo = {
+    personName: "Jurgen",
+    personAge: 34,
+    adress: {
+        city: "Berlin",
+        state: "Germany"
+    }
+}
+
+//When destruting object we use {} and specify the property we want to get
+const { personName, personAge } = personOne;
+//Even possible to 'rename' aka mapping  the properties
+const  {personName: makeUpNewName, personAge: makeUpNewAge } = personTwo;
+
+//Also possible with nested objects
+const { personName: germanName, adress: { city: aGermanCity } } = personTwo;
+
+//Even possible to add all properties of different object toghter
+const dog = {
+    breed: "Doberman",
+    lifeExpectancy: 8
+};
+
+const car = {
+    brand: "Toyota",
+    countWheel: 4
+}
+
+const frankensteindogcar = { ...dog, ...car };
+
+// ----------------------------------------------------------------------------
+document.querySelector('#manipulate-paragraph').textContent = "Haha, you are secondary paragraph";
