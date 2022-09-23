@@ -196,3 +196,27 @@ const totalPriceRedProducts = products.reduce((currentTotal, anItem) => {
 //const splicedProducts = products.splice(2,4);
 //products.splice(2, 3);
 //console.log(products);
+document.querySelector('#manipulate-paragraph').textContent = "Haha, you are secondary paragraph";
+
+//Three Ways of creating functions
+
+//1. Defining function [Traditional way] - SquareItUp hold a function value
+const SquareItUp = function(x){
+    return x*x;
+}
+
+//2. Declaration notation - DoubleItUp tobe a function
+function DoubleItUp(x){
+    return 2 * x;
+}
+
+//3. Arrow function - less verbose function value
+const TenTimesBigger = (x) => {
+    return 10 * x;
+}
+
+ //Arrays and properties
+  let colors = new Array('Red', 'Yellow', 'Orange');
+  console.log(colors.length);
+  // [Or]
+  console.log(colors["length"]);
