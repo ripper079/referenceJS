@@ -73,30 +73,6 @@ myCollectionCars.forEach(oneCar => {
 });
 
 
-// if/else statements
-//let funEmoji = false;
-//let ageOfPerson = 60; 
-// if (funEmoji)
-// {
-//     console.log("This is funny 😀");
-// }
-// else {
-//     console.log("This is not funny 😡");
-// }
-
-// if (ageOfPerson < 2){
-//     console.log("You are a 👶[baby]");
-// }
-// else if (ageOfPerson < 18){
-//     console.log("You are a 👧[teen]");
-// }
-// else if (ageOfPerson < 55){
-//     console.log("You are a 🧔[middle aged]");
-// }
-// else {
-//     console.log("You are a 👴[old age]");
-// }
-
 //Get the content from DOM
 //console.log(document.querySelector('#main-paragraph').textContent);
 //console.log(document.querySelector('#main-paragraph').innerHTML);
