@@ -72,8 +72,8 @@ myCollectionCars.forEach(oneCar => {
 
 
 // if/else statements
-let funEmoji = false;
-let ageOfPerson = 60; 
+//let funEmoji = false;
+//let ageOfPerson = 60; 
 // if (funEmoji)
 // {
 //     console.log("This is funny 😀");
