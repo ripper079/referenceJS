@@ -1,3 +1,5 @@
+
+console.log("The file javascripttest was succesfully included");
 //Output data
 /*
 //Simple dialog
