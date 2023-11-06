@@ -80,22 +80,6 @@ myCollectionCars.forEach(oneCar => {
 //document.querySelector('#manipulate-paragraph').textContent = "Haha, you are secondary paragraph";
 
 
-// ----------------------------------------------------------------------------
-// ARRAYS
-let fruits = ["Banana", "Apple", "Pear"];
-let colors = new Array('Red', 'Yellow', 'Orange');
-//Iterate arrays
-for (let i = 0; i < fruits.length; i++){
-//    console.log("Fruit: " + fruits[i]);
-}
-
-colors.forEach(element => {
-//    console.log("Element is:" + element);
-});
-
-// colors.forEach(element => console.log(`Element is= ${element}`));
-//colors.forEach(element => console.log("Element is:" +  element));
-
 //Array
 const products = [
     { name: "Bike",         price: 100,     color: "Red"    },
